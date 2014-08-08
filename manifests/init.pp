@@ -409,7 +409,7 @@ class apache (
 
 
   ## Hiera based resources
-  create_resource('apache::listen', $apache_listen)
+  create_resources('apache::listen', $apache_listen)
 
   ### Provide puppi data, if enabled ( puppi => true )
   if $apache::bool_puppi == true {
