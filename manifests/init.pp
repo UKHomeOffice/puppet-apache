@@ -256,7 +256,8 @@ class apache (
   $port                      = params_lookup( 'port' ),
   $ssl_port                  = params_lookup( 'ssl_port' ),
   $protocol                  = params_lookup( 'protocol' ),
-  $version                   = params_lookup( 'version' )
+  $version                   = params_lookup( 'version' ),
+  $apache_listen             = {}
   ) inherits apache::params {
 
   $bool_source_dir_purge=any2bool($source_dir_purge)
@@ -406,6 +407,9 @@ class apache (
     include $apache::my_class
   }
 
+
+  ## Hiera based resources
+  create_resource('apache::listen', $apache_listen)
 
   ### Provide puppi data, if enabled ( puppi => true )
   if $apache::bool_puppi == true {
