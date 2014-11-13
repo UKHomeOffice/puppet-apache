@@ -251,7 +251,7 @@ class apache (
   $config_file_default_purge = params_lookup( 'config_file_default_purge'),
   $pid_file                  = params_lookup( 'pid_file' ),
   $data_dir                  = params_lookup( 'data_dir' ),
-  $log_dir                   = params_lookup( 'log_dir' ),
+  $log_dir                   = '/var/log/httpd', 
   $log_file                  = params_lookup( 'log_file' ),
   $port                      = params_lookup( 'port' ),
   $ssl_port                  = params_lookup( 'ssl_port' ),
