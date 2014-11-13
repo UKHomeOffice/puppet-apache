@@ -165,6 +165,8 @@ define apache::vhost (
   $bool_passenger_rack_auto_detect   = any2bool($passenger_rack_auto_detect)
   $bool_passenger_rails_auto_detect  = any2bool($passenger_rails_auto_detect)
 
+  include apache
+
   $real_docroot = $docroot ? {
     ''      => "${apache::data_dir}/${name}",
     default => $docroot,
@@ -218,7 +220,6 @@ define apache::vhost (
     default => template($template),
   }
 
-  include apache
 
   file { $config_file_path:
     ensure  => $ensure,
