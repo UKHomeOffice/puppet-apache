@@ -99,9 +99,6 @@ define apache::virtualhost (
         require => Package['apache'],
       }
     }
-    redhat,centos,scientific,fedora: {
-      include apache::redhat
-    }
     default: { }
   }
 

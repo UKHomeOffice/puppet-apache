@@ -247,9 +247,6 @@ define apache::vhost (
         notify  => $apache::manage_service_autorestart,
       }
     }
-    redhat,centos,scientific,fedora: {
-      include apache::redhat
-    }
     default: { }
   }
 
