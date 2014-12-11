@@ -1,12 +1,14 @@
-/.gradle
-/metadata.json
-/.rvmrc
+*.iml
+.gradle
+metadata.json
+.rvmrc
 build
 pkg/
 Session.vim
 spec/fixtures
 .*.sw[a-z]
 *.un~
-/.gemfile.lock
-/.gemfile.travis.lock
+.gemfile.lock
+.gemfile.travis.lock
+.idea
 
